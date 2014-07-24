@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="4231823109">
+    <data-source source="LOCAL" name="Rails calculator_app: production" uuid="0f682afb-751e-4e0d-a2a7-4e0eead10bfe">
+      <driver-ref>postgresql</driver-ref>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:db/production.postgresql</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
