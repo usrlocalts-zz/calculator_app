@@ -1,5 +1,5 @@
 CalculatorApp::Application.routes.draw do
-
+  root 'calculator#create'
   put 'calculator/' => 'calculator#update'
 
   # The priority is based upon order of creation: first created -> highest priority.
