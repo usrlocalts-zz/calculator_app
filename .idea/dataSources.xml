@@ -1,10 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="4231823109">
+  <component name="DataSourceManagerImpl" format="xml" hash="1988378383">
     <data-source source="LOCAL" name="Rails calculator_app: production" uuid="0f682afb-751e-4e0d-a2a7-4e0eead10bfe">
       <driver-ref>postgresql</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:db/production.postgresql</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails calculator_app: development" uuid="c5e39a9b-8ac1-497d-b1e8-0de970c7af80">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/development.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails calculator_app: test" uuid="13e42e04-9c2c-47f2-8088-211e004647a8">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/db/test.sqlite3</jdbc-url>
       <libraries />
     </data-source>
   </component>

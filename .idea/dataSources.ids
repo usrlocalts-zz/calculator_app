@@ -3,4 +3,10 @@
   <data-source source="LOCAL" name="Rails calculator_app: production" uuid="0f682afb-751e-4e0d-a2a7-4e0eead10bfe">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source source="LOCAL" name="Rails calculator_app: development" uuid="c5e39a9b-8ac1-497d-b1e8-0de970c7af80">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails calculator_app: test" uuid="13e42e04-9c2c-47f2-8088-211e004647a8">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>
