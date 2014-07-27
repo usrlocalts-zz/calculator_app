@@ -1,15 +1,22 @@
 #Performs Calculator Operations
-class Api::CalculatorController<ActionController::Base
+class Api::CalculatorController < ActionController::Base
   def create
-    @state = find_or_create_with_default.state
+    Calculator.new({:state => 0})
+    head :ok
   end
 
   def update
     input = params[:command]
-    calculator = Calculator.last
-    parser = Parser.new
-    operation = parser.parse(input)
-    operation.operate(calculator)
-    render :json => {:state => Calculator.last.state}
+    if(Calculator.last.nil?)
+      head 404
+    else
+      calculator = Calculator.last
+      parser = Parser.new
+      operation = parser.parse(input)
+      operation.operate(calculator)
+      render :json => {:state => Calculator.last.state}
+
+    end
   end
+
 end

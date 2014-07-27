@@ -2,10 +2,11 @@ CalculatorApp::Application.routes.draw do
 
   root 'calculator#create'
   put 'calculator/' => 'calculator#update'
-  namespace 'Api'
-  post 'create' =>'calculator#create'
-  put 'update' => 'calculator_operations#calculate'
-  
+
+
+  post 'create' =>'api/calculator#create'
+  put 'update' => 'api/calculator#update'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
