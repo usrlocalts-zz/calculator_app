@@ -17,8 +17,8 @@ Calculator.prototype = {
 
     operationOnClick: function () {
         if (!this.created) {
-            this.create();
             this.created = true;
+            this.create();
         }
         this.update();
         this.notifyObservers();
@@ -29,8 +29,22 @@ Calculator.prototype = {
             method: "POST"
         })
     },
+
     update: function () {
         var command = this.commandElement.val();
+        var self = this;
+        $.ajax({
+            url: "/api/calculator_update",
+            method: "PUT",
+            data: {command: command},
+            success: function (data) {
+                self.display(data.state);
+            }
+
+        })
+    },
+    updated: function () {
+        var command = "";
         var self = this;
         $.ajax({
             url: "/api/calculator_update",
@@ -47,7 +61,7 @@ Calculator.prototype = {
     },
 
     registerObservers: function (otherCalculator) {
-        this.observers.on("CalculatorUpdated", _.bind(otherCalculator.update, otherCalculator));
+        this.observers.on("CalculatorUpdated", _.bind(otherCalculator.updated, otherCalculator));
     },
 
     notifyObservers: function(){
