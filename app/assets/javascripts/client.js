@@ -4,14 +4,14 @@ var Calculator = function (viewId) {
     this.submitButtonElement = this.viewElement.find(".submit");
     this.resultElement = this.viewElement.find(".result");
     this.created = false;
+    this.observers = $({});
     this.initialize();
 }
 Calculator.prototype = {
     initialize: function () {
         this.observeButtonClick();
     },
-    observeButtonClick: function (){
-        var self= this;
+    observeButtonClick: function () {
         this.submitButtonElement.click(_.bind(this.operationOnClick, this));
     },
 
@@ -21,6 +21,7 @@ Calculator.prototype = {
             this.created = true;
         }
         this.update();
+        this.notifyObservers();
     },
     create: function () {
         $.ajax({
@@ -43,6 +44,14 @@ Calculator.prototype = {
     },
     display: function (result) {
         this.resultElement.append("<div>" + result + "</div>");
+    },
+
+    registerObservers: function (otherCalculator) {
+        this.observers.on("CalculatorUpdated", _.bind(otherCalculator.update, otherCalculator));
+    },
+
+    notifyObservers: function(){
+        this.observers.trigger("CalculatorUpdated");
     }
 
 }
@@ -50,4 +59,6 @@ Calculator.prototype = {
 $(document).ready(function () {
     var calculator = new Calculator("#calculator")
     var calculator1 = new Calculator("#calculator-1")
+    calculator.registerObservers(calculator1);
+    calculator1.registerObservers(calculator);
 })
