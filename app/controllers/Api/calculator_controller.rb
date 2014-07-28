@@ -1,7 +1,7 @@
 #Performs Calculator Operations
 class Api::CalculatorController < ActionController::Base
   def create
-    Calculator.new({:state => 0})
+    Calculator.last||Calculator.new({:state => 0})
     head :ok
   end
 
@@ -15,7 +15,6 @@ class Api::CalculatorController < ActionController::Base
       operation = parser.parse(input)
       operation.operate(calculator)
       render :json => {:state => Calculator.last.state}
-
     end
   end
 

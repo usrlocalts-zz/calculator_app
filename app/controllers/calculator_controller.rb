@@ -1,5 +1,5 @@
 #Controller for Calculator
-class CalculatorController<ActionController::Base
+class CalculatorController<ApplicationController
   def update
       calculator = find_or_create_with_default
       parser = Parser.new

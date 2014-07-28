@@ -16,5 +16,6 @@ describe Api::CalculatorController do
   it "should create" do
     post :create
     expect(response.status).to eq(200)
+    expect(Calculator.count).to eq(1)
   end
 end
