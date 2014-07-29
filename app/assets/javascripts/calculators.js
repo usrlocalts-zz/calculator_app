@@ -1,6 +1,6 @@
 var Calculators = function() {
     this.calculators = [];
-}
+};
 Calculators.prototype= {
 
     addCalculator: function () {
@@ -12,7 +12,7 @@ Calculators.prototype= {
         $.each(this.calculators, function (index, otherCalculator) {
             otherCalculator.registerObservers(calculator);
             calculator.registerObservers(otherCalculator);
-        })
+        });
     }
 
 

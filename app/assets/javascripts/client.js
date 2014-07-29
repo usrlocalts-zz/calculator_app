@@ -74,5 +74,5 @@ $(document).ready(function () {
 
         calculators.addCalculator();
 
-    })
+    });
 });
