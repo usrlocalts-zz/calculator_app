@@ -103,6 +103,46 @@ context "Equality checks" do
         operations3 = Operations.new("add",5)
         expect(operations1).to eq(operations2) and expect(operations2).to eq(operations3) and expect(operations3).to eq(operations1)
       end
+
+
 end
+  context "Equality checks for eql?" do
+    let(:operations) do
+      Operations.new("add",5)
+    end
+    it "should be equal for same object id" do
+      expect(operations).to eql(operations)
+    end
+
+    it "should not be null" do
+      expect(operations).to_not eql(nil)
+    end
+
+    it "should not be equal for different type" do
+      object = Object.new
+      expect(operations).to_not eql(object)
+    end
+
+    it "should have same hash code" do
+      operations1 = Operations.new("add",5)
+      operations2 = Operations.new("add",5)
+      expect(operations1.hash).to eql(operations2.hash)
+    end
+
+    it "symmetric property" do
+      operations1 = Operations.new("add",5)
+      operations2 = Operations.new("add",5)
+      expect(operations1).to eql(operations2) and expect(operations2).to eql(operations1)
+    end
+
+    it "transitive property" do
+      operations1 = Operations.new("add",5)
+      operations2 = Operations.new("add",5)
+      operations3 = Operations.new("add",5)
+      expect(operations1).to eql(operations2) and expect(operations2).to eql(operations3) and expect(operations3).to eql(operations1)
+    end
+
+
+  end
 
 end

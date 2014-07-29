@@ -69,18 +69,10 @@ Calculator.prototype = {
 };
 
 $(document).ready(function () {
-    var calculators = [];
+    calculators = new Calculators();
     $(".addCalculator").click(function () {
-        var calculator = new Calculator("#templates .calculator");
-        $.each(calculators, function (index, value) {
-            value.registerObservers(calculator);
-            calculator.registerObservers(value);
-        });
 
-        calculators.push(calculator);
+        calculators.addCalculator();
 
-
-    });
-
-
+    })
 });
