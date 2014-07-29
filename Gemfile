@@ -27,6 +27,15 @@ gem 'jbuilder', '~> 1.2'
 #Underscore JS
 gem 'underscore-rails'
 
+#jslint
+gem 'jslint_on_rails', group: [:development, :test]
+
+group :test do
+  gem 'simplecov', require: false, group: :test
+  gem 'metric_fu'
+  gem 'rspec-rails'
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

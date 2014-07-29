@@ -1,12 +1,12 @@
 #Controller for Calculator
 class CalculatorController<ApplicationController
   def update
-      calculator = find_or_create_with_default
-      parser = Parser.new
-      input = params[:command]
-      operation = parser.parse(input)
-      operation.operate(calculator)
-      @state = Calculator.last.state
+        calculator = find_or_create_with_default
+        parser = Parser.new
+        input = params[:command]
+        operation = parser.parse(input)
+        operation.operate(calculator)
+        @state = Calculator.last.state
     end
 
   def create
