@@ -1,6 +1,7 @@
 CalculatorApp::Application.routes.draw do
 
-  root 'calculator#create'
+  devise_for :users
+  root 'client#index'
   get 'api_calculator' => 'client#index'
   # Example of regular route:
   put 'calculator' => 'calculator#update'

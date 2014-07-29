@@ -69,7 +69,7 @@ Calculator.prototype = {
 };
 
 $(document).ready(function () {
-    calculators = new Calculators();
+    var calculators = new Calculators();
     $(".addCalculator").click(function () {
 
         calculators.addCalculator();

@@ -41,6 +41,8 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'devise'
+
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails'

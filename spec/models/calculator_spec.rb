@@ -5,7 +5,7 @@ describe Calculator do
     context 'operations' do
       context 'Addition' do
         it 'should add 5 ' do
-          calculator = Calculator.new({:state => 0})
+          calculator = Calculator.new({:state => 0,:user_id=>1})
           calculator.+5
           calculator.reload
           expect(calculator.state).to eq(5)

@@ -1,6 +1,6 @@
 #Models calculator
 class Calculator < ActiveRecord::Base
-
+belongs_to :user
   def +(input)
     self.state += input
     self.save
