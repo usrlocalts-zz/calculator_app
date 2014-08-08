@@ -1,10 +1,12 @@
 #Performs Calculator Operations
-class Api::CalculatorController < ActionController::Base
+class Api::CalculatorController < ApiController
   def create
      unless current_user.calculator
-      Calculator.create({:state => 0, :user => current_user})
+      current_user.calculator=Calculator.create({:state => 0, :user => current_user})
+      head 201
+     else
+       head: ok
      end
-      head :ok
   end
 
     def update
